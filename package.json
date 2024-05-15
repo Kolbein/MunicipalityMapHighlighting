@@ -1,0 +1,13 @@
+{
+  "name": "norgeskart",
+  "version": "1.0.0",
+  "description": "Highlight certain municipalities",
+  "main": "index.js",
+  "scripts": {},
+  "author": "Kolbein",
+  "license": "ISC",
+  "type": "module",
+  "dependencies": {
+    "csv-parser": "^3.0.0"
+  }
+}
