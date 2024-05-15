@@ -51,7 +51,7 @@ The municipalities that are not in the list to keep have the following propertie
 "stroke-width": 0.5
 "stroke-opacity": 1
 "fill": "#ffffff"   <-- White
-"fill-opacity": 0.5"
+"fill-opacity": 0.5
 ```
 
 The CSV file (`matching_names.csv`) contains the names of the municipalities that were found in the list to keep.
