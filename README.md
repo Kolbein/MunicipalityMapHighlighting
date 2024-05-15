@@ -25,7 +25,7 @@ To run the script, use the following command:
 node index.js
 ```
 
-`kommuner-to-keep.csv` is just a list of municipality names - each name on a separate line. Don't include "kommune" in the names.
+`kommuner-to-keep.csv` is just a list of municipality names - each name on a separate line.
 
 `Kommuner-S.geojson` can be found here: https://github.com/robhop/fylker-og-kommuner/blob/main/Kommuner-S.geojson
 

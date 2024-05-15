@@ -7,7 +7,7 @@ let municipalities = JSON.parse(data);
 let municipalitiesToKeep = readFileSync('kommuner-to-keep.csv', 'utf8');
 let lines = municipalitiesToKeep.split('\n');
 
-let namesToKeep = lines.map(line => line.trim());
+let namesToKeep = lines.map(line => line.trim().replace(" kommune", ""));
 let matchingNames = [];
 
 // Filter and highlight
