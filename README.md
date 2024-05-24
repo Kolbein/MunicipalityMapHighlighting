@@ -3,7 +3,7 @@ This project is designed to filter and highlight certain municipalities in Norwa
 
 <figure>
     <img src="example-map.png" alt="Example map" width="500" height="auto">
-    <figcaption><em>Highlighted municipalities in blue. Map by Mapsharper.</em></figcaption>
+    <figcaption><em>Highlighted municipalities in blue. Map by geojson.io.</em></figcaption>
 </figure>
 
 ## Requirements
@@ -17,7 +17,7 @@ Run `npm install` to install the dependencies.
 ## Usage
 The main script in this project is `index.js`. This script reads a GeoJSON file and a CSV file with the names of municipalities to keep. It then iterates over the features in the GeoJSON file, and if a municipality is in the list to keep, it modifies its properties to indicate that it should be highlighted.
 
-The `index.js` script reads from `Kommuner-S.geojson` and `kommuner-to-keep.csv`, and writes to `kommuner_output.geojson` and `matching_names.csv`.
+The `index.js` script reads from `Kommuner-S.geojson` and `kommuner-input.csv`, and writes to `kommuner_output.geojson` and `matching_names.csv`.
 The latter is used to list out which municipalities are highlighted after the filtering. 
 
 To run the script, use the following command:
@@ -25,7 +25,7 @@ To run the script, use the following command:
 node index.js
 ```
 
-`kommuner-to-keep.csv` is just a list of municipality names - each name on a separate line.
+`kommuner-input.csv` is just a list of municipality names - each name on a separate line.
 
 `Kommuner-S.geojson` can be found here: https://github.com/robhop/fylker-og-kommuner/blob/main/Kommuner-S.geojson
 

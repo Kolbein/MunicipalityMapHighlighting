@@ -4,11 +4,13 @@ import { readFileSync, writeFileSync } from 'fs';
 let data = readFileSync('Kommuner-S.geojson', 'utf8');
 let municipalities = JSON.parse(data);
 
-let municipalitiesToKeep = readFileSync('kommuner-to-keep.csv', 'utf8');
+let municipalitiesToKeep = readFileSync('kommuner-input.csv', 'utf8');
 let lines = municipalitiesToKeep.split('\n');
 
-let namesToKeep = lines.map(line => line.trim().replace(" kommune", ""));
 let matchingNames = [];
+let namesToKeep = lines
+    .filter(line => line.trim() !== '' && !line.trim().startsWith('#'))
+    .map(line => line.trim().replace(" kommune", ""));
 
 // Filter and highlight
 municipalities.features.forEach(feature => {
@@ -39,10 +41,6 @@ let output = JSON.stringify(municipalities);
 writeFileSync('kommuner_output.geojson', output, 'utf8');
 
 // Console output
-namesToKeep = lines
-.filter(line => line.trim() !== '' && !line.trim().startsWith('#'))
-.map(line => line.trim());
-
 let nonMatchingNames = namesToKeep.filter(name => !matchingNames.includes(name));
 console.log(`Number of matching municipalities: ${matchingNames.length}`);
 console.log(`Number of excluded municipalities: ${nonMatchingNames.length}`);
